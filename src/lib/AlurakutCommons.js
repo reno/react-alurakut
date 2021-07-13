@@ -126,7 +126,7 @@ AlurakutMenu.Wrapper = styled.header`
       a {
         font-size: 12px;
         color: white;
-        padding: 10px 16px;
+        padding: 16px 16px;
         position: relative;
         text-decoration: none;
         &:after {
@@ -146,6 +146,7 @@ AlurakutMenu.Wrapper = styled.header`
     input {
       color: #ffffff;
       background: #5579A1;
+      margin: 5px 0px;
       padding: 10px 42px;
       border: 0;
       background-image: url(${`${BASE_URL}/icons/search.svg`});
@@ -162,9 +163,9 @@ AlurakutMenu.Wrapper = styled.header`
 `;
 AlurakutMenu.Logo = styled.img`
   background-color: #ffffff;
-  padding: 9px 14px;
+  padding: 13px 14px;
   border-radius: 1000px;
-  height: 34px;
+  height: 20px;
 `;
 
 function AlurakutMenuProfileSidebar({ githubUser }) {
