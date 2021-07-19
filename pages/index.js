@@ -1,4 +1,6 @@
 import React from 'react';
+import nookies from 'nookies';
+import jwt from 'jsonwebtoken';
 import MainGrid from '../src/components/MainGrid'
 import ProfileSidebar from '../src/patterns/ProfileSidebar'
 import WelcomeBox from '../src/patterns/WelcomeBox'
@@ -8,8 +10,8 @@ import CommunitiesBox from '../src/patterns/CommunitiesBox'
 import { AlurakutMenu, OrkutNostalgicIconSet } from '../src/lib/AlurakutCommons';
 
 
-export default function Home() {
-  const user = 'reno';
+export default function Home(props) {
+  const user = props.githubUser;
   const [friends, setFriends] = React.useState([]);
   const [communities, setCommunities] = React.useState([]);
   React.useEffect(function() {
@@ -40,7 +42,6 @@ export default function Home() {
       setCommunities(communities);
     })
   }, [])
-
   return (
     <>
       <AlurakutMenu/>
@@ -59,4 +60,29 @@ export default function Home() {
       </MainGrid>
     </>
   )
+}
+
+export async function getServerSideProps(context) {
+  const cookies = nookies.get(context);
+  const token = cookies.USER_TOKEN;  
+  const { isAuthenticated } = await fetch('http://localhost:3000/api/auth', {
+    headers: {
+        Authorization: token
+      }
+  })
+  .then((response) => response.json())
+  if(!isAuthenticated) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      }
+    }
+  }
+  const { githubUser } = jwt.decode(token);
+  return {
+    props: {
+      githubUser
+    },
+  }
 }

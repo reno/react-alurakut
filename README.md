@@ -9,6 +9,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [React.js](https://reactjs.org/)
 - [Next.js](https://nextjs.org/)
 - [Styled Components](https://styled-components.com/)
+- [GraphQL](https://graphql.org/)
 
 ## 🚀 Uso
 
