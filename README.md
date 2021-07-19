@@ -2,6 +2,9 @@
 
 Um clone do Orkut desenvolvido na 3ª imersão React da [Alura](https://alura.com.br).
 
+<p align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1FpATSYlwviSrHRfaemiGi1DK2-qFKuGB"/>
+</p>
 ## ⚙️  Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
