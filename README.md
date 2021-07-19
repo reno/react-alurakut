@@ -20,7 +20,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Clone o repositório
 - Execute `yarn` para instalar as dependências.
 - Rode o `yarn dev` para iniciar a aplicação.
-- Acesse `http://localhost:3333`
+- Acesse `http://localhost:3000`
 
 ## 📄 Licença
 
